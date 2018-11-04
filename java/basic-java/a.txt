@@ -1,0 +1,16 @@
+City: ABC
+Temp not in F
+
+City: KLM
+Wind data in column index 4
+Temp data is in column index 0
+
+City: PQR
+Wind data in column index 2
+Wind data is in KPH
+Temp data is in column index 5
+
+City: XYZ
+Used semicolon as delimiter
+
+All cities had wildly low temperature values that were removed.

@@ -1,0 +1,60 @@
+1a: Cold
++-------+-----+
+| status|count|
++-------+-----+
+|   Cold|   35|
+|Neutral| 5754|
+|    Hot|   14|
++-------+-----+
+
+1b: Average Temperature(F) difference, Oshkosh-Iowa.
++------+------------+
+|season|Oshkosh-Iowa|
++------+------------+
+|Spring|      -5.442|
+|Summer|      -3.393|
+|  Fall|      -2.791|
+|Winter|      -2.185|
++------+------------+
+
+1c: The 7 day period ending on July 31, 2015.
+(there are ties if rounded to 2 decimal places)
++----+-----+---+---------+
+|Year|Month|Day|7_day_avg|
++----+-----+---+---------+
+|2015|    7| 31|59.556701|
++----+-----+---+---------+
+
+1d: 5:53 AM has most occurrences of lowest avg temp
++-------+
+|TimeCST|
++-------+
+|5:53 AM|
++-------+
+
+1e: Iowa City, 56.2 degrees, Dec 14, 2008 10:04 PM to Dec 15, 2008 5:05 AM
++--------+------------------+-----------------+--------+
+|    City|Oshkosh_Start_Date| Oshkosh_End_Date|Max_Diff|
++--------+------------------+-----------------+--------+
+| Oshkosh|  20080130 3:53 AM|20080129 10:20 PM|    51.1|
+|IowaCity|  20081215 5:05 AM|20081214 10:04 PM|    56.2|
++--------+------------------+-----------------+--------+
+
+1f: Note: Hour in 24 hour time format
++-----+--------+----+
+|Month|    City|Hour|
++-----+--------+----+
+|    1|IowaCity|  14|
+|    2|IowaCity|  14|
+|    3|IowaCity|  14|
+|    4|IowaCity|  22|
+|    5| Oshkosh|   5|
+|    6| Oshkosh|   5|
+|    7| Oshkosh|   5|
+|    8| Oshkosh|   5|
+|    9| Oshkosh|   4|
+|   10| Oshkosh|  19|
+|   11|IowaCity|  13|
+|   12|IowaCity|  14|
++-----+--------+----+
+

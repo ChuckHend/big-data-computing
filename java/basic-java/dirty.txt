@@ -1,0 +1,19 @@
+# Step 1 : Read in the data
+
+Read all files into memory. After reading them in, check the header for contents of known delimiters. Visually inspect the header. Compare delimiters against requirments/specification. Use read_file() function to read in data for all cities.
+
+# Step 2: Process the Wind data
+call the process_wind() function:
+Determine which column contains the wind data, and take note if it is in the wrong position. Determine if units are in MPH or KPH, and compare to the requirements/specification. Check wind values for numeric. Several cities use 'CALM' as a value. Replace these with zero. Also replace negative wind values with zeros. If units are KPH, convert them to MPH. Take subset of the wind data where the month column is march and the year column is 2006. Analyze min/max values for erroneous values. Calculate the mean of the resulting data.
+
+# Step 3: Process Temp data
+call the process_temp() function:
+Determine which column contains the temp data, and take note if it is in the wrong position. Determine whether units are in F or C, and compare this to the specifications. Ensure all values are numeric. If values are in C, convert them to F. Take a subset of the temp data where the year column is equal to 2006. Inspect outliers, remove values less than -150 from the data set. Calculate the mean of the resulting data.
+
+# Step 4: Analyze Results
+
+The city with the minimum difference between its mean wind speed and 8.3 is the closest.
+
+The city with the minimum difference between its mean temp and 49.65 is the closest.
+
+Refer to jupyer notebook for calculations - visual inspection is used to determine the minima of the four values.
