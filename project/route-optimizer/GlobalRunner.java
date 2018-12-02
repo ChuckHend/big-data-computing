@@ -39,7 +39,7 @@ public class GlobalRunner{
         */
         List<List<String>> allPerms = generatePerm(lsJob);
 
-        int numThreads = 4; // run with 8 cores
+        int numThreads = iterJob.length - 1; // num threads must be < num buildings
 
         // split up the job to numThreads jobs
         int jobsPerThread = allPerms.size() / numThreads;
@@ -74,6 +74,7 @@ public class GlobalRunner{
 
         // each worker returns the fastest route on the worker
         // but need the fastest from all workers
+        
         HashMap<String, Integer> fastest = getFastest(allResults);
 
         //print out results and save to file
@@ -114,6 +115,7 @@ public class GlobalRunner{
         int minValue = Integer.MAX_VALUE;
         HashMap<String, Integer> fastest = new HashMap<String, Integer>();
         List<String> keys = new ArrayList<String>(allTimes.keySet());
+        
         for(String key : keys) {
                 int value = allTimes.get(key);
                 if(value < minValue) {
@@ -121,6 +123,7 @@ public class GlobalRunner{
                     minKey = key;
                 }
             }
+        
         fastest.put(minKey, allTimes.get(minKey));
         return fastest;
     }
