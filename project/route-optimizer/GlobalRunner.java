@@ -82,26 +82,33 @@ public class GlobalRunner{
 
     }// end main
 
-    public static void printResults(
-        HashMap<String, Integer> hmap,
-        HashMap<Integer, String> bldgIndex) throws IOException{
-        String key = String.join("",hmap.keySet());
-        String[] routeRaw = key.split(":");
-        ArrayList<String> routeString = new ArrayList<String>();
-        /* 
-        so far we've been working with the building names
-        according to the integer assigned to them, ie. bldgA is 0.
-        Now we need to turn them back to their formal names.
-        */
-        for (String buildNum : routeRaw){
-            // lookup each integer and get the formal name for the bldg
-            routeString.add(bldgIndex.get(Integer.parseInt(buildNum)));
+    public static void printResults(HashMap<String, Integer> hmap,HashMap<Integer, String> bldgIndex) 
+        throws IOException{
+        
+        // START handle ties
+        String key;
+        String[] routeRaw;
+        int fastestTime = 9999;
+        
+        String outString = "Fastest Route(s):\n";
+
+        for (Map.Entry<String, Integer> entry : hmap.entrySet()) {
+            fastestTime = entry.getValue();
+            key = entry.getKey();
+            //convert the keystring to list, splitting by colon            
+            routeRaw = key.split(":");
+            ArrayList<String> routeString = new ArrayList<String>();
+            for (String buildNum : routeRaw){
+                
+                // lookup each integer and get the formal name for the bldg
+                routeString.add(bldgIndex.get(Integer.parseInt(buildNum)));
+
+            }
+            outString = outString + String.join(" => ",routeString) + "\n";
+            
         }
-        // build the string to print/save to file
-        String outString = "Fastest Route:\n" + 
-            String.join(" => ",routeString) + "\n" + 
-            "Total Time: " + 
-            hmap.get(key);
+        outString = outString + "Total Time: " + fastestTime;
+
         // then print and save it
         System.out.println(outString);
         File outfile = new File("output2.txt");
@@ -124,7 +131,14 @@ public class GlobalRunner{
                 }
             }
         
-        fastest.put(minKey, allTimes.get(minKey));
+        for (Map.Entry<String, Integer> entry : allTimes.entrySet()) {
+                String key = entry.getKey();
+                Integer value = entry.getValue();
+                if (value == minValue){
+                    fastest.put(key, value);
+                }
+            }
+        
         return fastest;
     }
 
